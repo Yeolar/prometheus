@@ -2,8 +2,6 @@
 
 #include <vector>
 
-#include "prometheus/detail/core_export.h"
-
 namespace prometheus {
 struct MetricFamily;
 }
@@ -14,7 +12,7 @@ namespace prometheus {
 /// collect metrics.
 ///
 /// A Collectable has to be registered for collection. See Registry.
-class PROMETHEUS_CPP_CORE_EXPORT Collectable {
+class Collectable {
  public:
   virtual ~Collectable() = default;
 

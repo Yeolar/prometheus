@@ -5,7 +5,6 @@
 #include <gmock/gmock.h>
 
 #include "prometheus/client_metric.h"
-#include "prometheus/detail/future_std.h"
 #include "prometheus/histogram.h"
 
 namespace prometheus {
@@ -71,7 +70,7 @@ TEST(FamilyTest, add_twice) {
 
 TEST(FamilyTest, should_assert_on_invalid_metric_name) {
   auto create_family_with_invalid_name = []() {
-    return detail::make_unique<Family<Counter>>(
+    return std::make_unique<Family<Counter>>(
         "", "empty name", std::map<std::string, std::string>{});
   };
   EXPECT_DEBUG_DEATH(create_family_with_invalid_name(),

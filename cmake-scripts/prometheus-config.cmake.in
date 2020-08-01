@@ -1,0 +1,24 @@
+#
+# CMake package configuration file for prometheus
+#
+# Defines the target "prometheus::prometheus"
+# Add this to your target_link_libraries() call to depend on prometheus.
+#
+# Also sets the variables PROMETHEUS_INCLUDE_DIR and PROMETHEUS_LIBRARY.
+# However, in most cases using the prometheus::prometheus target is sufficient,
+# and you won't need these variables.
+#
+
+@PACKAGE_INIT@
+
+set_and_check(PROMETHEUS_INCLUDE_DIR "@PACKAGE_CMAKE_INSTALL_INCLUDEDIR@")
+
+if(NOT TARGET prometheus::prometheus)
+  include(${CMAKE_CURRENT_LIST_DIR}/prometheus-targets.cmake)
+endif()
+
+set(PROMETHEUS_LIBRARY prometheus::prometheus)
+
+if(NOT prometheus_FIND_QUIETLY)
+  message(STATUS "Found prometheus: ${PACKAGE_PREFIX_DIR}")
+endif()

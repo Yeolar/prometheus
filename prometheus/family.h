@@ -15,8 +15,6 @@
 #include "prometheus/check_names.h"
 #include "prometheus/client_metric.h"
 #include "prometheus/collectable.h"
-#include "prometheus/detail/core_export.h"
-#include "prometheus/detail/future_std.h"
 #include "prometheus/detail/utils.h"
 #include "prometheus/metric_family.h"
 
@@ -59,7 +57,7 @@ namespace prometheus {
 ///
 /// \tparam T One of the metric types Counter, Gauge, Histogram or Summary.
 template <typename T>
-class PROMETHEUS_CPP_CORE_EXPORT Family : public Collectable {
+class Family : public Collectable {
  public:
   /// \brief Create a new metric.
   ///
@@ -109,7 +107,7 @@ class PROMETHEUS_CPP_CORE_EXPORT Family : public Collectable {
   /// labels already exists - the already existing dimensional data.
   template <typename... Args>
   T& Add(const std::map<std::string, std::string>& labels, Args&&... args) {
-    return Add(labels, detail::make_unique<T>(args...));
+    return Add(labels, std::make_unique<T>(args...));
   }
 
   /// \brief Remove the given dimensional data.

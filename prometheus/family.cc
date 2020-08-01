@@ -97,9 +97,9 @@ ClientMetric Family<T>::CollectMetric(std::size_t hash, T* metric) const {
   return collected;
 }
 
-template class PROMETHEUS_CPP_CORE_EXPORT Family<Counter>;
-template class PROMETHEUS_CPP_CORE_EXPORT Family<Gauge>;
-template class PROMETHEUS_CPP_CORE_EXPORT Family<Histogram>;
-template class PROMETHEUS_CPP_CORE_EXPORT Family<Summary>;
+template class Family<Counter>;
+template class Family<Gauge>;
+template class Family<Histogram>;
+template class Family<Summary>;
 
 }  // namespace prometheus

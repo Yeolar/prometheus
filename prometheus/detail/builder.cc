@@ -34,10 +34,10 @@ Family<T>& Builder<T>::Register(Registry& registry) {
   return registry.Add<T>(name_, help_, labels_);
 }
 
-template class PROMETHEUS_CPP_CORE_EXPORT Builder<Counter>;
-template class PROMETHEUS_CPP_CORE_EXPORT Builder<Gauge>;
-template class PROMETHEUS_CPP_CORE_EXPORT Builder<Histogram>;
-template class PROMETHEUS_CPP_CORE_EXPORT Builder<Summary>;
+template class Builder<Counter>;
+template class Builder<Gauge>;
+template class Builder<Histogram>;
+template class Builder<Summary>;
 
 }  // namespace detail
 

@@ -7,8 +7,6 @@
 #include <vector>
 
 #include "prometheus/collectable.h"
-#include "prometheus/detail/core_export.h"
-#include "prometheus/detail/future_std.h"
 #include "prometheus/family.h"
 #include "prometheus/metric_family.h"
 
@@ -38,7 +36,7 @@ class Builder;
 ///
 /// The class is thread-safe. No concurrent call to any API of this type causes
 /// a data race.
-class PROMETHEUS_CPP_CORE_EXPORT Registry : public Collectable {
+class Registry : public Collectable {
  public:
   /// \brief How to deal with repeatedly added family names for a type.
   ///

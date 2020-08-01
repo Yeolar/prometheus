@@ -127,7 +127,7 @@ Family<T>& Registry::Add(const std::string& name, const std::string& help,
     }
   }
 
-  auto family = detail::make_unique<Family<T>>(name, help, labels);
+  auto family = std::make_unique<Family<T>>(name, help, labels);
   auto& ref = *family;
   families.push_back(std::move(family));
   return ref;
