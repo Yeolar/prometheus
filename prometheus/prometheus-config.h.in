@@ -1,0 +1,13 @@
+#pragma once
+
+/* meta */
+
+#define PROME_PACKAGE "@PROJECT_NAME@"
+#define PROME_VERSION "@VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@"
+
+/* compile tests for keyword, lib, function, ... */
+
+/* gflags */
+
+#cmakedefine PROME_GFLAGS_NAMESPACE @PROME_GFLAGS_NAMESPACE@
+#cmakedefine PROME_UNUSUAL_GFLAGS_NAMESPACE 1
